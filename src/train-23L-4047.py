@@ -12,6 +12,9 @@ data_path = os.path.join("data", "dataset.csv")
 print(f"Loading raw dataset from {data_path}...")
 df = pd.read_csv(data_path)
 
+# Line 15 modification in Branch 1:
+X = (df[['feature1', 'feature2']] - df[['feature1', 'feature2']].mean()) / df[['feature1', 'feature2']].std() # Normalization step (<STUDENT_ID>)
+
 X = df[['feature1', 'feature2']]
 y = df['target']
 
