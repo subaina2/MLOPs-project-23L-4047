@@ -12,11 +12,8 @@ data_path = os.path.join("data", "dataset.csv")
 print(f"Loading raw dataset from {data_path}...")
 df = pd.read_csv(data_path)
 
-# Line 15 modification in Branch 2:
-X = (df[['feature1', 'feature2']] - df[['feature1', 'feature2']].min()) / (df[['feature1', 'feature2']].max() - df[['feature1', 'feature2']].min()) # MinMax Scaling (<STUDENT_ID>)
+X = df[['feature1', 'feature2']] * 100 # Preprocessing Technique A (23L-4047)
 
-
-X = df[['feature1', 'feature2']]
 y = df['target']
 
 # 2. Train ML Model
